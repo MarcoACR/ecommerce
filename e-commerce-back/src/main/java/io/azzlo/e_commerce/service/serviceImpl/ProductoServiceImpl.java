@@ -18,4 +18,26 @@ public class ProductoServiceImpl implements ProductoService {
     public List<Producto> buscarProductos() {
         return repositoryProduc.findAll();
     }
+
+    @Override
+    public Producto guardar(Producto producto) {
+        repositoryProduc.save(producto);
+        return producto;
+
+    }
+
+    @Override
+    public Producto encontrarPorId(Long idProducto) {
+        if(repositoryProduc.findById(idProducto).isPresent()){
+            return repositoryProduc.findById(idProducto).get();
+        }
+        return null;
+
+    }
+
+    @Override
+    public void eliminar(Long idProducto) {
+        Producto eliminarProducto = encontrarPorId(idProducto);
+        repositoryProduc.delete(eliminarProducto);
+    }
 }

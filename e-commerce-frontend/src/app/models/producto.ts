@@ -1,10 +1,7 @@
 export class Producto {
-
-  constructor(
-  public id_producto: number,
-  public nombre: string,
-  public descripcion: string,
-  public precio: number,
-  public cantidad: number,
-  ) {}
+  public idproducto!: number;
+  public nombre!: string;
+  public descripcion!: string;
+  public precio!: number;
+  public cantidad!: number;
 }

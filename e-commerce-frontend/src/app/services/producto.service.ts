@@ -19,4 +19,17 @@ export class ProductoService {
     );
   }
 
+  public guardar(producto: Producto): Observable<Producto>{
+    return this.httpCliente.post<Producto>(this.getUrl, producto);
+  }
+
+  public buscarPorId(idProducto: number): Observable<Producto>{
+    return this.httpCliente.get<Producto>(`${this.getUrl}/${idProducto}`).pipe(
+    map(response => response)
+    );
+  }
+
+  public eliminarPorId(idProducto: number): Observable<any>{
+    return this.httpCliente.delete<Producto>(`${this.getUrl}/${idProducto}`, {responseType: 'json'});
+  }
 }
