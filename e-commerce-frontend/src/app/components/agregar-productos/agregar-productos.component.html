@@ -1,34 +1,48 @@
 <form (ngSubmit)="guardarProductos()">
 
+  <div class="mb-3">
+    <label class="form-label"> Ingresa el Nombre </label>
   <input
+    class="form-control"
     type = "text"
     name = "nombre"
     [(ngModel)]="guardaProducto.nombre"
     placeholder="Ingresa el Nombre."
   />
+  </div>
 
+
+  <div class="mb-3">
   <textarea
+    class="form-control"
     type = "text"
+    rows="3"
     name = "descripcion"
     [(ngModel)]="guardaProducto.descripcion"
     placeholder="Ingresa el Descripcion."></textarea>
+  </div>
 
-  <input
+  <div class="mb-3">
+  <input class="form-control"
     type = "number"
     maxlength="10"
     name = "precio"
     [(ngModel)]="guardaProducto.precio"
     placeholder="Ingresa el Precio."
   />
+  </div>
 
+  <div class="mb-3">
   <input
+    class="form-control"
     type = "number"
     maxlength="4"
     name = "cantidad"
     [(ngModel)]="guardaProducto.cantidad"
     placeholder="Ingresa el Cantidad."
   />
+  </div>
 
-  <button type="submit">Agregar</button>
-  <button *ngIf="guardaProducto.idproducto" (click)="eliminarProducto(guardaProducto.idproducto)"> Eliminar</button>
+  <button type="submit" class="btn btn-success">Agregar</button>
+  <button class="btn btn-danger" *ngIf="guardaProducto.idproducto" (click)="eliminarProducto(guardaProducto.idproducto)"> Eliminar</button>
 </form>
