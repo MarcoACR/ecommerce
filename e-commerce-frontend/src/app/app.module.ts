@@ -8,8 +8,6 @@ import { AgregarProductosComponent } from './components/agregar-productos/agrega
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
-
-
 const routeo: Routes = [
   {path: 'productos', component: ListaProductosComponent},
   {path: 'agregar', component: AgregarProductosComponent},
